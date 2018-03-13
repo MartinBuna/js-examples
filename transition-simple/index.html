@@ -1,29 +1,33 @@
+<html>
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="./css/styles.css" type="text/css" media="all">
 </head>
 
-<div id="circle" class="circle shown"></div>
-
-<script>
-
-    function statefulButton() {
-        var state = true;
-        var circle = document.getElementById("circle");
-        circle.addEventListener("click", function () {
-            state = !state;
-            toggleVisibility(circle, state);
-        })
-    }
-
-    function toggleVisibility(element, state) {
-        if (state) {
-            element.classList.replace("hidden", "shown");
+<body>
+    <script>
+        function statefulButton() {
+            var state = true;
+            var circle = document.getElementById("circle");
+            circle.addEventListener("click", function () {
+                state = !state;
+                toggleVisibility(circle, state);
+            })
         }
-        else {
-            element.classList.replace("shown", "hidden");
-        }
-    };
 
-    statefulButton();
-</script>
+        function toggleVisibility(element, state) {
+            if (state) {
+                element.classList.replace("hidden", "shown");
+            } else {
+                element.classList.replace("shown", "hidden");
+            }
+        };
+
+        statefulButton();
+    </script>
+
+    <div id="circle" class="circle shown"></div>
+</body>
+
+</html>
