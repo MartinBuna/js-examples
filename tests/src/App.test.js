@@ -4,14 +4,21 @@ import App from './App';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+  ReactDOM.render(
+    <App/>, div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
-test('string will be reversed', () => {
-  expect(App.prototype.reverseString("hello")).toBe("olleh");
-});
+describe("Otestování funkce reverseString", () => {
+  test('Toto by mělo projít.', () => {
+    expect(App.prototype.reverseString("abcd")).toBe("dcba");
+  });
 
-test('string will be reversed', () => {
+  test('Toto by mělo selhat.', () => {
+        expect(App.prototype.reverseString("abcd")).toBe("acdb");
+  });
+})
+
+test('array length', () => {
   expect(App.prototype.arrayLength([1, 2])).toBe(2);
 });
